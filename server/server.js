@@ -1,8 +1,12 @@
 // routes for server
 const express = require("express");
+// modules syntax fro .env file
+const dotenv = require('dotenv');
 
 // import product data
-const products = require('./data/products')
+const products = require('./data/products');
+
+dotenv.config();
 
 // initialize express
 const app = express();
@@ -23,5 +27,9 @@ app.get('/api/products/:id', (req, res) => {
     res.json(product)
 })
 
+const PORT = process.env.PORT || 5000
+
 // listen for server
-app.listen(5000, console.log('Server running on port 5000'));
+app.listen(
+    PORT, 
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`));
