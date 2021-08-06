@@ -1,10 +1,11 @@
 // routes for server
-const express = require("express");
-// modules syntax fro .env file
-const dotenv = require('dotenv');
+import express from 'express';
+
+//file with hidden variables liek API keys, etc.
+import dotenv from 'dotenv';
 
 // import product data
-const products = require('./data/products');
+import products from './data/products.js';
 
 dotenv.config();
 
