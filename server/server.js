@@ -4,10 +4,15 @@ import express from 'express';
 //file with hidden variables liek API keys, etc.
 import dotenv from 'dotenv';
 
+//import connection
+import connectDB from './config/db.js'
+
 // import product data
 import products from './data/products.js';
 
 dotenv.config();
+
+connectDB();
 
 // initialize express
 const app = express();
